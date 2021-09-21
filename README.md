@@ -25,7 +25,7 @@ Additional description about the project and its features.
 
 To get a local copy up and running follow these simple steps.
 
-- Clone using SSH git@github.com:Goldinium/to_do_app.git
+- Clone using SSH git@github.com:redwing555/todo_list.git
 - Clone using https https://github.com/redwing555/todo_list.git
 
 ## Authors

@@ -1,5 +1,5 @@
 {
-  "name": "webpack-template",
+  "name": "todo-list",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redwing555/webpack-template.git"
+    "url": "git+https://github.com/redwing555/todo-list.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/redwing555/webpack-template/issues"
+    "url": "https://github.com/redwing555/todo-list/issues"
   },
-  "homepage": "https://github.com/redwing555/webpack-template#readme",
+  "homepage": "https://github.com/redwing555/todo-list#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.3.0",

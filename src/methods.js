@@ -3,16 +3,17 @@ export default function checkedTasksEvent(tasksArr, checkbox) {
     const tmp = tasksArr.findIndex((el) => el.index === parseInt(e.target.id, 10));
 
     if (e.target.checked === true) {
+      
       tasksArr[tmp].completed = true;
-      // e.target.nextElementSibling.style.textDecoration = 'line-through';
-      // e.target.nextElementSibling.style.color = 'gray';
+      e.target.nextElementSibling.classList.add('completed') ;
+      
+      
     } else {
+      
       tasksArr[tmp].completed = false;
-      // e.target.nextElementSibling.style.textDecoration = 'none';
-      // e.target.nextElementSibling.style.display = 'inline-block';
-      // e.target.nextElementSibling.style.color = 'black';
+      e.target.nextElementSibling.classList.remove('completed') ;
     }
-
+    JSON.parse(localStorage.getItem('tasksList'));
     localStorage.setItem('tasksList', JSON.stringify(tasksArr));
   }));
 }

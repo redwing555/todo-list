@@ -13,16 +13,28 @@ body {
   width: 50rem;
 }
 
+.task-description{
+  width: 50%;
+}
+
 .today-container div {
   font-size: large;
   font-weight: normal;
   padding-left: 1rem;
 }
 
+.completed{
+  text-decoration: line-through;
+  color: gray;
+}
+
 .fa-input {
   float: right;
   margin-left: auto;
   margin-right: 0.5rem;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
 }
 
 .fa-btn {
@@ -97,7 +109,7 @@ body {
   font-weight: lighter;
 }
 
-.list .li {
+.list .li-task {
   border-bottom: 1px solid lightgray;
   text-align: left;
   padding: 2rem 1rem;
@@ -112,6 +124,20 @@ body {
   margin-right: 2rem;
 }
 
+.trash{
+  display: none;
+}
+
+.trash-active{
+  display : block;
+}
+
+.ellipse{
+  display:none !important;
+}
+
+
+
 .clear {
   background-color: lightgray;
   border-bottom: none !important;
@@ -119,6 +145,7 @@ body {
 
 .remove {
   margin-left: auto;
+  float: right;
   background-color: transparent;
   border: none;
 }
@@ -127,3 +154,10 @@ body {
   color: gray;
   cursor: pointer;
 }
+
+[contenteditable] {
+  outline: 0px solid transparent;
+  padding-right: 3%;
+  padding-right: 2%;
+}
+

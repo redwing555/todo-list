@@ -13,7 +13,7 @@ body {
   width: 50rem;
 }
 
-.task-description{
+.task-description {
   width: 50%;
 }
 
@@ -23,7 +23,7 @@ body {
   padding-left: 1rem;
 }
 
-.completed{
+.completed {
   text-decoration: line-through;
   color: gray;
 }
@@ -81,9 +81,11 @@ body {
   transform: translate(-50%, -50%);
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
   padding-left: 0;
+  margin: 25rem 0;
 }
 
 .item {
+  position: relative;
   padding: 2rem 1rem;
   border-bottom: 1px solid lightgray;
 }
@@ -124,19 +126,24 @@ body {
   margin-right: 2rem;
 }
 
-.trash{
+.trash {
   display: none;
 }
 
-.trash-active{
-  display : block;
+.trash-active {
+  display: block;
+  color: gray;
 }
 
-.ellipse{
-  display:none !important;
+.trash-active:active {
+  transform: scale(1.5);
+  transition: 100ms ease;
 }
 
-
+#delete-to-do:active {
+  transform: rotate(720deg);
+  transition: 100ms ease;
+}
 
 .clear {
   background-color: lightgray;
@@ -156,8 +163,7 @@ body {
 }
 
 [contenteditable] {
-  outline: 0px solid transparent;
+  outline: 0 solid transparent;
   padding-right: 3%;
   padding-right: 2%;
 }
-

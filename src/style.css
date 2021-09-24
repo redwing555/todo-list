@@ -13,16 +13,28 @@ body {
   width: 50rem;
 }
 
+.task-description {
+  width: 50%;
+}
+
 .today-container div {
   font-size: large;
   font-weight: normal;
   padding-left: 1rem;
 }
 
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
 .fa-input {
   float: right;
   margin-left: auto;
   margin-right: 0.5rem;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
 }
 
 .fa-btn {
@@ -69,9 +81,11 @@ body {
   transform: translate(-50%, -50%);
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
   padding-left: 0;
+  margin: 25rem 0;
 }
 
 .item {
+  position: relative;
   padding: 2rem 1rem;
   border-bottom: 1px solid lightgray;
 }
@@ -97,7 +111,7 @@ body {
   font-weight: lighter;
 }
 
-.list .li {
+.list .li-task {
   border-bottom: 1px solid lightgray;
   text-align: left;
   padding: 2rem 1rem;
@@ -112,6 +126,25 @@ body {
   margin-right: 2rem;
 }
 
+.trash {
+  display: none;
+}
+
+.trash-active {
+  display: block;
+  color: gray;
+}
+
+.trash-active:active {
+  transform: scale(1.5);
+  transition: 100ms ease;
+}
+
+#delete-to-do:active {
+  transform: rotate(720deg);
+  transition: 100ms ease;
+}
+
 .clear {
   background-color: lightgray;
   border-bottom: none !important;
@@ -119,6 +152,7 @@ body {
 
 .remove {
   margin-left: auto;
+  float: right;
   background-color: transparent;
   border: none;
 }
@@ -126,4 +160,10 @@ body {
 .remove .fa {
   color: gray;
   cursor: pointer;
+}
+
+[contenteditable] {
+  outline: 0 solid transparent;
+  padding-right: 3%;
+  padding-right: 2%;
 }

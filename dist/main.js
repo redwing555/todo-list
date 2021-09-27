@@ -17725,19 +17725,23 @@ function deleteCompletedTask(taskArr) {
   localStorage.setItem('tasksList', JSON.stringify(taskArr));
 
   window.location.reload();
-  taskArr.forEach((task, i) => task.index === Array.from(Array(storeLength).keys())[i]);
+  /* eslint-disable */
+  taskArr.forEach((task, i) => task.index = Array.from(Array(storeLength).keys())[i]);
+  /* eslint-enable */
   localStorage.setItem('tasksList', JSON.stringify(taskArr));
 }
 
 function moveToTrash(taskArr) {
   const trashCan = [...document.querySelectorAll('.trash')];
+  const storeLength = JSON.parse(localStorage.getItem('tasksList')).length;
 
   trashCan.forEach((can) => can.addEventListener('click', () => {
-    const storeLength = JSON.parse(localStorage.getItem('tasksList')).length;
     taskArr = taskArr.filter((task) => task.index !== parseInt(can.id[6], 10));
     localStorage.setItem('tasksList', JSON.stringify(taskArr));
     window.location.reload();
-    taskArr.forEach((task, i) => task.index === Array.from(Array(storeLength).keys())[i]);
+    /* eslint-disable */
+    taskArr.forEach((task, i) => task.index = Array.from(Array(storeLength).keys())[i]);
+    /* eslint-enable */
     localStorage.setItem('tasksList', JSON.stringify(taskArr));
   }));
 }

@@ -15,9 +15,9 @@ Additional description about the project and its features.
 - Webpack
 - JavaScript
 
-<!-- ## Live Demo
+## Live Demo
 
-[Live Demo Link](https://livedemo.com) -->
+[Live Demo Link](https://redwing555.github.io/todo-list/)
 
 
 ## Getting Started

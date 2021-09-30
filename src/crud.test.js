@@ -45,9 +45,16 @@
  
      })
  
-    
-   
- 
+     test('task added to DOM', () => {
+        document.body.innerHTML =
+    '<div>' +
+    '  <ul class="list"></ul>' +
+    '</div>';
+
+    createTask(0, 'do push ups',true);
+    const listel = document.querySelectorAll('.list li');
+    expect(listel).toHaveLength(1);
+    })
      
  })
  

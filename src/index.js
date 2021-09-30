@@ -7,14 +7,9 @@ import {tasks,list,loadDomList,  editTask, deleteCompletedTask, AddTask} from '.
 
 /* eslint-enable */
 
-
 const refresh = document.getElementById('delete-to-do');
 const addButton = document.getElementById('add');
 const clearAll = document.getElementById('clearall');
-
-
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
   JSON.parse(localStorage.getItem('tasksList'));

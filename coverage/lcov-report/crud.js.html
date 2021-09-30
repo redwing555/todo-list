@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.63% </span>
+                <span class="strong">27.27% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/66</span>
+                <span class='fraction'>18/66</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.66% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/12</span>
+                <span class='fraction'>3/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">15.78% </span>
+                <span class="strong">21.05% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/19</span>
+                <span class='fraction'>4/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.79% </span>
+                <span class="strong">29.31% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/58</span>
+                <span class='fraction'>17/58</span>
             </div>
         
             
@@ -186,18 +186,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -300,19 +300,19 @@ export function <span class="fstat-no" title="function not covered" >hidden(</sp
   }
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >createTask(</span>index, description, taskState) {
-  const list = <span class="cstat-no" title="statement not covered" >document.querySelector('.list');</span>
-  const taskInfo = <span class="cstat-no" title="statement not covered" >document.createElement('li');</span>
-  const update = <span class="cstat-no" title="statement not covered" >document.createElement('a');</span>
+export function createTask(index, description, taskState) {
+  const list = document.querySelector('.list');
+  const taskInfo = document.createElement('li');
+  const update = document.createElement('a');
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (taskState === true) {</span>
-<span class="cstat-no" title="statement not covered" >    update.innerHTML = '&lt;button  class="remove" &gt; &lt;i class="ellipse fa fa-ellipsis-v" aria-hidden="true"&gt;&lt;/i&gt; &lt;i class="trash fa fa-trash" aria-hidden="true"&gt;&lt;/i&gt; &lt;/button&gt;';</span>
-<span class="cstat-no" title="statement not covered" >    taskInfo.innerHTML = `&lt;input type="checkbox" id="${index}" class="task-box" checked&gt; </span>
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (taskState === true) {
+    update.innerHTML = '&lt;button  class="remove" &gt; &lt;i class="ellipse fa fa-ellipsis-v" aria-hidden="true"&gt;&lt;/i&gt; &lt;i class="trash fa fa-trash" aria-hidden="true"&gt;&lt;/i&gt; &lt;/button&gt;';
+    taskInfo.innerHTML = `&lt;input type="checkbox" id="${index}" class="task-box" checked&gt; 
                             &lt;span id ="task-${index}" contenteditable='false' class= "task-description completed"&gt; ${description} &lt;/span&gt;`;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    taskInfo.classList.add('li-task');</span>
-<span class="cstat-no" title="statement not covered" >    taskInfo.appendChild(update);</span>
-<span class="cstat-no" title="statement not covered" >    list.appendChild(taskInfo);</span>
+    taskInfo.classList.add('li-task');
+    taskInfo.appendChild(update);
+    list.appendChild(taskInfo);
   } else {
 <span class="cstat-no" title="statement not covered" >    update.innerHTML = `&lt;button   class="remove"&gt; &lt;i class="fa fa-ellipsis-v" aria-hidden="true"&gt;&lt;/i&gt;&lt;i id ="trash-${index}"  class="trash fa fa-trash" aria-hidden="true"&gt;&lt;/i&gt; &lt;/button&gt;`;</span>
 <span class="cstat-no" title="statement not covered" >    taskInfo.innerHTML = `&lt;input type="checkbox" id="${index}" class="task-box"&gt; </span>
@@ -409,7 +409,7 @@ export function <span class="fstat-no" title="function not covered" >editTask(</
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Sep 30 2021 15:28:39 GMT+0100 (UTC+01:00)
+                at Thu Sep 30 2021 15:51:54 GMT+0100 (UTC+01:00)
             </div>
         </div>
         <script src="prettify.js"></script>

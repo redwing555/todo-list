@@ -43,8 +43,6 @@ export function loadDomList() {
   });
 }
 
-
-
 export function AddTask(taskArr) {
   const task = {
     description: document.querySelector('.input-task').value,
@@ -56,26 +54,27 @@ export function AddTask(taskArr) {
   localStorage.setItem('tasksList', JSON.stringify(taskArr));
 }
 
-export function deleteTask(taskArr, num){
-
+export function deleteTask(taskArr, num) {
   taskArr = taskArr.filter((task) => task.index !== num);
   localStorage.setItem('tasksList', JSON.stringify(taskArr));
-  
-  return taskArr;
-  
-}
 
+  return taskArr;
+}
+/* eslint-disable */
 export function deleteCompletedTask(taskArr) {
   const storeLength = JSON.parse(localStorage.getItem('tasksList')).length;
   taskArr = taskArr.filter((task) => task.completed === false);
   localStorage.setItem('tasksList', JSON.stringify(taskArr));
-  
-  
+
+
+
   taskArr.forEach((task, i) => task.index = Array.from(Array(storeLength).keys())[i]);
-  
+
   localStorage.setItem('tasksList', JSON.stringify(taskArr));
   return taskArr;
 }
+
+/* eslint-enable */
 
 function moveToTrash(taskArr) {
   const trashCan = [...document.querySelectorAll('.trash')];

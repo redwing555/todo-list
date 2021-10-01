@@ -2,8 +2,8 @@ import './style.css';
 
 /* eslint-disable */
 import _ from 'lodash';
-import  checkedTasksEvent from './methods.js';
-import {tasks,list,loadDomList,  editTask, deleteCompletedTask, AddTask} from './crud.js';
+import  {checkedTasksEvent,editTask, deleteCompletedTask, moveToTrash } from './methods.js';
+import {tasks,list,loadDomList, AddTask} from './crud.js';
 
 /* eslint-enable */
 
@@ -14,8 +14,6 @@ const clearAll = document.getElementById('clearall');
 document.addEventListener('DOMContentLoaded', () => {
   JSON.parse(localStorage.getItem('tasksList'));
   loadDomList();
-  const checkbox = [...document.querySelectorAll('.task-box')];
-  checkedTasksEvent(tasks, checkbox);
 });
 
 addButton.addEventListener('click', () => {
@@ -26,7 +24,22 @@ addButton.addEventListener('click', () => {
 
 list.addEventListener('click', (e) => {
   const desc = [...e.target.children][1];
-  editTask(desc, tasks, e);
+  editTask(desc, tasks, e.target);
+});
+
+list.addEventListener('click', (e) => {
+  if (e.target && e.target.matches('input.task-box')) {
+    JSON.parse(localStorage.getItem('tasksList'));
+    checkedTasksEvent(tasks, e.target);
+  }
+});
+
+list.addEventListener('click', (ev) => {
+  if (ev.target && ev.target.matches('i.trash')) {
+    const trashId = parseInt(ev.target.id[6], 10);
+    moveToTrash(tasks, trashId);
+    window.location.reload();
+  }
 });
 
 refresh.addEventListener('click', () => {
@@ -36,4 +49,5 @@ refresh.addEventListener('click', () => {
 
 clearAll.addEventListener('click', () => {
   deleteCompletedTask(tasks);
+  window.location.reload();
 });

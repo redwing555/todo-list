@@ -1,3 +1,11 @@
 node_modules/
 dist/
 coverage/
+.babelrc
+yarn.lock
+.hintrc
+*.config.json
+*config.js
+*.json
+*.lock
+

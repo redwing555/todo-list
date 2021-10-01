@@ -1,13 +1,11 @@
 node_modules/
 dist/
-
 coverage/
-
 .babelrc
 yarn.lock
 .hintrc
-.eslintrc.json
-package.json
-webpack.config.js
-yarn.lock
+*.config.json
+*config.js
+*.json
+*.lock
 
